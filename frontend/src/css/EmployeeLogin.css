@@ -1,0 +1,147 @@
+/* EmployeeLogin.jsx styles */
+
+.otp-input { text-align: center; font-size: 22px !important; letter-spacing: 7px; font-weight: 600; }
+
+.otp-email { margin-bottom: 22px; padding: 12px 14px; border-radius: 8px; background: #f6f7f9; color: #7b8494; font-size: 12px; line-height: 1.5; }
+
+.otp-email strong { display: block; margin-top: 2px; color: #172033; font-size: 13px; }
+
+.otp-boxes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-group .otp-box {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 52px !important;
+
+  padding: 0 !important;
+
+  border: 1px solid #d5d9e0;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #172033;
+
+  text-align: center;
+  font-size: 22px !important;
+  font-weight: 600;
+
+  outline: none;
+  box-sizing: border-box;
+
+  letter-spacing: 0 !important;
+}
+
+.form-group .otp-box:focus {
+  border-color: #263d60;
+  box-shadow: 0 0 0 3px rgba(38, 61, 96, 0.08);
+}
+
+@media (max-width: 480px) {
+.otp-boxes {
+    gap: 7px;
+  }.form-group .otp-box {
+    height: 48px !important;
+    font-size: 19px !important;
+  }
+}
+
+#root .login-card form .form-group > input:not(.otp-box) {
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border: 1px solid #d5d9e0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 14px;
+}
+
+#root .login-card form .form-group > input:not(.otp-box)::placeholder {
+  color: #98a2b3;
+}
+
+#root .login-card form .form-group > input:not(.otp-box):focus {
+  outline: none;
+  border-color: #263d60;
+  box-shadow: 0 0 0 3px rgba(38, 61, 96, 0.08);
+}
+
+#root .otp-email {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  border: 1px solid #eaecf0;
+  border-radius: 9px;
+  background: #f8f9fb;
+  line-height: 1.55;
+}
+
+#root .otp-email strong {
+  margin-top: 4px;
+  word-break: break-word;
+}
+
+#root .otp-boxes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+#root .login-card form .form-group .otp-box {
+  width: 100% !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #d5d9e0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 20px !important;
+  font-weight: 600;
+  letter-spacing: 0 !important;
+}
+
+#root .login-card form .form-group .otp-box:focus {
+  outline: none;
+  border-color: #263d60;
+  box-shadow: 0 0 0 3px rgba(38, 61, 96, 0.08);
+}
+
+@media (max-width: 700px) {
+#root .otp-boxes {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+#root .otp-boxes {
+    gap: 6px;
+  }#root .login-card form .form-group .otp-box {
+    height: 48px !important;
+    min-height: 48px !important;
+    font-size: 18px !important;
+  }
+}
+
+.otp-boxes {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.otp-box {
+  box-sizing: border-box;
+}
+

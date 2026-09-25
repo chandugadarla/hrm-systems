@@ -1,0 +1,88 @@
+
+/* =========================================================
+   PROFILE DROPDOWN - HR + EMPLOYEE
+   ========================================================= */
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-button {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.profile-button:hover {
+  background: #f2f4f7;
+}
+
+.profile-button:focus-visible {
+  outline: 2px solid #98a2b3;
+  outline-offset: 2px;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 180px;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.14);
+  z-index: 2000;
+}
+
+.profile-logout,
+.profile-menu-item {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: #344054;
+  cursor: pointer;
+}
+
+.profile-menu-item:hover {
+  background: #f2f4f7;
+  color: #172033;
+}
+
+.profile-logout:hover {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.profile-logout span,
+.profile-menu-item span {
+  width: 18px;
+  text-align: center;
+}
+
+/* Keep the profile dropdown above page content. */
+.dashboard-topbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.topbar-actions {
+  position: relative;
+  z-index: 1001;
+}

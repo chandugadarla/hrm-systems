@@ -1,0 +1,52 @@
+/* HRLeaves.jsx styles */
+
+.dashboard-page .dashboard-main > .leave-card .form-grid {
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.dashboard-page .dashboard-main > .leave-card .form-group {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-page .dashboard-main > .leave-card .form-group input,
+.dashboard-page .dashboard-main > .leave-card .form-group select,
+.dashboard-page .dashboard-main > .leave-card .form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-page .dashboard-main .leave-table-wrapper {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 750px) {
+.dashboard-page .dashboard-main .leave-table-wrapper {
+    overflow-x: auto;
+  }
+}
+
+.leave-table .employee-name-link,
+.leave-table .view-leave-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+

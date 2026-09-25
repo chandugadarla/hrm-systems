@@ -1,0 +1,53 @@
+/* EmployeeProfile.jsx styles */
+
+@media (max-width: 900px) {
+.employee-profile-card .card-header,
+  .employee-profile-card .profile-field {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+.employee-profile-card .card-header,
+  .employee-profile-card .profile-field {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+.employee-profile-card {
+  overflow: hidden;
+}.employee-profile-card .card-header {
+  padding: 26px 28px 22px;
+  border-bottom: 1px solid #eaecf0;
+}.employee-profile-card .profile-field {
+  padding: 20px 28px;
+  border-bottom: 1px solid #eaecf0;
+}.employee-profile-card .profile-field:last-child {
+  border-bottom: none;
+}.employee-profile-card label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475467;
+}.employee-profile-card input,
+.employee-profile-card .profile-value {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d9e0ea;
+  border-radius: 9px;
+  background: #ffffff;
+
+  font-size: 14px;
+  color: #172033;
+}
+}
+

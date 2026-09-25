@@ -1,0 +1,830 @@
+.employee-notifications-page {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  box-sizing: border-box;
+  background: #f5f7fa;
+}
+
+.employee-notification-list {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.employee-notification-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22px 24px;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+}
+
+.employee-notification-card:hover {
+  border-color: #d0d5dd;
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.07);
+}
+
+.employee-notification-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.employee-notification-title {
+  min-width: 0;
+}
+
+.employee-notification-type {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.employee-notification-type.holiday {
+  background: #eef4ff;
+  color: #175cd3;
+}
+
+.employee-notification-type.festival {
+  background: #fff8e6;
+  color: #9a6700;
+}
+
+.employee-notification-type.birthday {
+  background: #f4f3ff;
+  color: #6941c6;
+}
+
+.employee-notification-type.announcement {
+  background: #f2f4f7;
+  color: #475467;
+}
+
+.employee-notification-title h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.employee-notification-card-top time {
+  flex-shrink: 0;
+  color: #667085;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.employee-notification-message {
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #eaecf0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.employee-notifications-empty {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 55px 25px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+}
+
+.employee-notification-empty-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f2f4f7;
+  color: #667085;
+  font-size: 22px;
+}
+
+.employee-notifications-empty h2 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 17px;
+}
+
+.employee-notifications-empty p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .employee-notification-card {
+    padding: 18px;
+  }
+
+  .employee-notification-card-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .employee-notification-card-top time {
+    order: -1;
+  }
+}
+/* =========================================================
+   EMPLOYEE NOTIFICATIONS PAGE
+   ========================================================= */
+
+.employee-notifications-page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 42px 48px 70px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.employee-notifications-page .dashboard-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.employee-notifications-page .dashboard-heading h1 {
+  margin: 6px 0 8px;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #172033;
+}
+
+.employee-notifications-page .dashboard-heading p {
+  margin: 0;
+  color: #667085;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.employee-notifications-page .page-eyebrow {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #a66b00;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.employee-notifications-page .date-button {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 18px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #344054;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.employee-notifications-page .date-button:hover {
+  background: #f8fafc;
+  border-color: #98a2b3;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+}
+
+.employee-notifications-page .date-button:active {
+  transform: translateY(1px);
+}
+
+.employee-notifications-page .date-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.employee-notifications-page .dashboard-error {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+
+  border: 1px solid #fecdca;
+  border-radius: 12px;
+
+  background: #fff6f5;
+  color: #b42318;
+}
+
+.employee-notifications-page .dashboard-error h2 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.employee-notifications-page .dashboard-error p {
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.employee-notifications-page .dashboard-error button {
+  min-height: 38px;
+  padding: 0 15px;
+
+  border: 1px solid #f04438;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #b42318;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.employee-notifications-page .dashboard-loading {
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.employee-notifications-page .loading-spinner {
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 14px;
+
+  border: 3px solid #e4e7ec;
+  border-top-color: #344054;
+  border-radius: 50%;
+
+  animation: employeeNotificationSpin 0.8s linear infinite;
+}
+
+@keyframes employeeNotificationSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   NOTIFICATION LIST
+   ========================================================= */
+
+.employee-notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD
+   ========================================================= */
+
+.employee-notification-card {
+  position: relative;
+
+  width: 100%;
+  padding: 26px 28px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow: 0 3px 12px rgba(16, 24, 40, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.employee-notification-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cfd6df;
+
+  box-shadow:
+    0 12px 28px rgba(16, 24, 40, 0.08);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.employee-notification-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #eef0f3;
+}
+
+.employee-notification-title {
+  min-width: 0;
+}
+
+.employee-notification-title h2 {
+  margin: 12px 0 0;
+
+  color: #172033;
+
+  font-size: 21px;
+  line-height: 1.35;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+.employee-notification-card-top time {
+  flex-shrink: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TYPE BADGES
+   ========================================================= */
+
+.employee-notification-type {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+  padding: 0 11px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.employee-notification-type.holiday {
+  background: #eef4ff;
+  color: #175cd3;
+}
+
+.employee-notification-type.festival {
+  background: #fff4e5;
+  color: #b54708;
+}
+
+.employee-notification-type.birthday {
+  background: #f4ebff;
+  color: #7f56d9;
+}
+
+.employee-notification-type.announcement {
+  background: #eef2f6;
+  color: #344054;
+}
+
+.employee-notification-type.project {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.employee-notification-message {
+  margin: 20px 0 0;
+
+  color: #475467;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PROJECT ASSIGNMENT
+   ========================================================= */
+
+.employee-notification-card.project-assignment {
+  border-left: 4px solid #12b76a;
+}
+
+.employee-notification-card.project-assignment
+  .employee-notification-message {
+  color: #344054;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.employee-notifications-empty {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 30px;
+
+  text-align: center;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.employee-notification-empty-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 14px;
+
+  background: #f2f4f7;
+  color: #667085;
+
+  font-size: 22px;
+}
+
+.employee-notifications-empty h2 {
+  margin: 0 0 8px;
+
+  color: #172033;
+
+  font-size: 21px;
+}
+
+.employee-notifications-empty p {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .employee-notifications-page {
+    padding: 30px 24px 60px;
+  }
+
+  .employee-notifications-page .dashboard-heading {
+    flex-direction: column;
+  }
+
+  .employee-notifications-page .date-button {
+    width: 100%;
+  }
+
+  .employee-notification-card-top {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .employee-notification-card-top time {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .employee-notifications-page {
+    padding: 24px 16px 50px;
+  }
+
+  .employee-notifications-page .dashboard-heading h1 {
+    font-size: 32px;
+  }
+
+  .employee-notification-card {
+    padding: 20px;
+    border-radius: 13px;
+  }
+
+  .employee-notification-title h2 {
+    font-size: 18px;
+  }
+
+  .employee-notification-message {
+    font-size: 14px;
+  }
+}
+/* =========================================================
+   EMPLOYEE NOTIFICATIONS - BUTTONS
+   ========================================================= */
+
+/* Mark all as read */
+.employee-notifications-page button {
+  font-family: inherit;
+}
+
+.employee-notifications-page .mark-all-read,
+.employee-notifications-page button[class*="read"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 38px;
+  padding: 8px 14px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.employee-notifications-page .mark-all-read:hover,
+.employee-notifications-page button[class*="read"]:hover {
+  background: #f8fafc;
+  border-color: #98a2b3;
+  color: #172033;
+}
+
+.employee-notifications-page .mark-all-read:active,
+.employee-notifications-page button[class*="read"]:active {
+  transform: translateY(1px);
+}
+
+/* Disabled Mark All as Read */
+.employee-notifications-page .mark-all-read:disabled,
+.employee-notifications-page button[class*="read"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: #f2f4f7;
+}
+
+
+/* =========================================================
+   NOTIFICATION FILTER BUTTONS
+   ========================================================= */
+
+.employee-notification-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 8px 0 20px;
+  padding: 4px;
+
+  width: fit-content;
+
+  background: #eef1f5;
+  border-radius: 10px;
+}
+
+.employee-notification-filters button {
+  min-height: 36px;
+  padding: 8px 15px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #475467;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.employee-notification-filters button:hover {
+  background: #ffffff;
+  color: #172033;
+}
+
+.employee-notification-filters button.active {
+  background: #ffffff;
+  color: #172033;
+
+  box-shadow:
+    0 1px 3px rgba(16, 24, 40, 0.12);
+}
+
+.employee-notification-filters button:focus-visible {
+  outline: 2px solid #98a2b3;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD ACTION BUTTONS
+   ========================================================= */
+
+.employee-notification-card button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 12px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #344054;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.employee-notification-card button:hover {
+  color: #172033;
+  text-decoration: underline;
+}
+
+.employee-notification-card button:focus-visible {
+  outline: 2px solid #98a2b3;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+   ========================================================= */
+
+.employee-notifications-page .date-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-width: 118px;
+  min-height: 42px;
+
+  padding: 9px 16px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.employee-notifications-page .date-button:hover {
+  background: #f8fafc;
+  border-color: #98a2b3;
+
+  box-shadow: 0 2px 5px rgba(16, 24, 40, 0.08);
+}
+
+.employee-notifications-page .date-button:active {
+  transform: translateY(1px);
+}
+
+.employee-notifications-page .date-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .employee-notification-filters {
+    width: 100%;
+    overflow-x: auto;
+    padding: 4px;
+  }
+
+  .employee-notification-filters button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .employee-notifications-page .date-button {
+    min-width: 105px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-notification-filters {
+    gap: 4px;
+  }
+
+  .employee-notification-filters button {
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+}

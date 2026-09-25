@@ -1,0 +1,16 @@
+/* HRLeaveDetails.jsx — page-specific styles */
+
+.hr-leave-details-page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hr-leave-details-page .dashboard-panel {
+  padding: 24px;
+}
+
+@media (max-width: 700px) {
+  .hr-leave-details-page .dashboard-panel {
+    padding: 18px;
+  }
+}

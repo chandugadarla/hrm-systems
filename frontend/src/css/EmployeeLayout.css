@@ -1,0 +1,139 @@
+/* EmployeeLayout.jsx — layout-specific styles */
+
+.employee-dashboard-content {
+  min-width: 0;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.employee-static-topbar {
+  min-height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.notification-nav-item {
+  position: relative;
+}
+
+.notification-nav-label {
+  min-width: 0;
+  flex: 1;
+}
+
+.notification-badge,
+.topbar-notification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #d92d20;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.notification-badge {
+  margin-left: auto;
+}
+
+.notification-button-with-badge {
+  position: relative;
+}
+
+.topbar-notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border: 2px solid #ffffff;
+}
+
+.notification-popup {
+  position: fixed;
+  top: 82px;
+  right: 24px;
+  z-index: 3000;
+  width: min(430px, calc(100vw - 32px));
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(16, 24, 40, 0.18);
+  box-sizing: border-box;
+}
+
+.notification-popup-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f2f4f7;
+  color: #526d8b;
+}
+
+.notification-popup-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.notification-popup-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #9a6b18;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.notification-popup-content strong {
+  display: block;
+  color: #172033;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.notification-popup-content p {
+  margin: 7px 0 12px;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.notification-popup-content button {
+  border: 0;
+  background: transparent;
+  color: #344054;
+  padding: 4px 0;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notification-popup-content button:hover {
+  color: #172033;
+  text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .notification-popup {
+    top: 76px;
+    right: 14px;
+    width: calc(100vw - 28px);
+    padding: 16px;
+  }
+}

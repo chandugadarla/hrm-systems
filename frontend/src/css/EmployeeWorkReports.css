@@ -1,0 +1,1211 @@
+/* EmployeeWorkReports.jsx styles */
+
+.leave-table-wrapper,
+.report-table-wrapper,
+.project-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.leave-table,
+.report-table,
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.leave-table th,
+.report-table th,
+.project-table th {
+  background: #fafbfc;
+  color: #667085;
+  border-bottom: 1px solid #eaecf0;
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.leave-table td,
+.report-table td,
+.project-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #f0f1f3;
+  color: #344054;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.leave-table tbody tr:hover,
+.report-table tbody tr:hover,
+.project-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+@media (max-width: 900px) {
+.work-report-form {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+.work-report-form {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+.work-report-form {
+  padding: 28px;
+}.work-report-form .form-group {
+  margin-bottom: 24px;
+}.work-report-form label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+}.work-report-form input,
+.work-report-form textarea,
+.work-report-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+
+  border: 1px solid #d9e0ea;
+  border-radius: 9px;
+  background: #ffffff;
+
+  color: #172033;
+  font-size: 14px;
+  font-family: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}.work-report-form textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}.work-report-form input:focus,
+.work-report-form textarea:focus,
+.work-report-form select:focus {
+  outline: none;
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.08);
+}.work-report-form .submit-report-btn {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}.work-report-form .submit-report-btn:hover {
+  background: #202d45;
+  transform: translateY(-1px);
+}
+}
+
+.hr-report-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employee-work-reports-page,
+.dashboard-main.employee-work-reports-page {
+  width: 100%;
+  max-width: none;
+}
+
+.employee-work-reports-page .hr-content {
+  width: 100%;
+}
+
+.employee-work-reports-page .page-heading {
+  margin-bottom: 26px;
+}
+
+.employee-work-reports-page .page-heading h1 {
+  margin: 5px 0 8px;
+  color: #172033;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 3vw, 46px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.employee-work-reports-page .page-heading p {
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.employee-work-reports-page .leave-card,
+.employee-work-reports-page .leave-apply-panel {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e4e7ec;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.035);
+}
+
+.employee-work-reports-page .leave-apply-panel {
+  margin-bottom: 24px;
+}
+
+.employee-work-reports-page .card-header {
+  padding: 22px 26px 18px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.employee-work-reports-page .card-header h2 {
+  margin: 5px 0 0;
+  color: #172033;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.employee-work-reports-page .eyebrow {
+  color: #a47718;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.employee-work-reports-page .leave-apply-panel form {
+  padding: 24px 26px 26px;
+}
+
+.employee-work-reports-page .form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px 22px;
+  align-items: start;
+}
+
+.employee-work-reports-page .form-group {
+  min-width: 0;
+  margin: 0;
+}
+
+.employee-work-reports-page .form-group.full-width,
+.employee-work-reports-page .work-report-projects,
+.employee-work-reports-page .form-grid .work-report-projects {
+  grid-column: 1 / -1;
+}
+
+.employee-work-reports-page .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.employee-work-reports-page .required-mark {
+  color: #a47718;
+  font-weight: 800;
+}
+
+.employee-work-reports-page .form-group input,
+.employee-work-reports-page .form-group textarea,
+.employee-work-reports-page .form-group select {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #dfe3e8;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.employee-work-reports-page .form-group input,
+.employee-work-reports-page .form-group select {
+  height: 46px;
+  padding: 0 13px;
+}
+
+.employee-work-reports-page .form-group textarea {
+  min-height: 112px;
+  padding: 12px 13px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.employee-work-reports-page .form-group input::placeholder,
+.employee-work-reports-page .form-group textarea::placeholder {
+  color: #a4adba;
+}
+
+.employee-work-reports-page .form-group input:focus,
+.employee-work-reports-page .form-group textarea:focus,
+.employee-work-reports-page .form-group select:focus {
+  border-color: #7b8798;
+  box-shadow: 0 0 0 3px rgba(23, 32, 51, 0.06);
+}
+
+.employee-work-reports-page .work-report-projects {
+  margin-top: 2px;
+}
+
+.employee-work-reports-page .project-checkbox-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.employee-work-reports-page .project-checkbox {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  gap: 13px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 66px;
+  margin: 0 !important;
+  padding: 12px 15px !important;
+  border: 1px solid #e0e4ea;
+  border-radius: 11px;
+  background: #fbfcfd;
+  color: #344054;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.employee-work-reports-page .project-checkbox:hover {
+  border-color: #c6ccd5;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.05);
+  transform: translateY(-1px);
+}
+
+.employee-work-reports-page .project-checkbox.selected {
+  border-color: #172033;
+  background: #f7f8fa;
+  box-shadow: 0 0 0 2px rgba(23, 32, 51, 0.05);
+}
+
+.employee-work-reports-page .project-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1.5px solid #b8c0cc !important;
+  border-radius: 5px !important;
+  background: #ffffff !important;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.employee-work-reports-page .project-checkbox input[type="checkbox"]:checked {
+  border-color: #172033 !important;
+  background: #172033 !important;
+}
+
+.employee-work-reports-page .project-checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.employee-work-reports-page .project-checkbox-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.employee-work-reports-page .project-checkbox-name {
+  display: block;
+  overflow: hidden;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.employee-work-reports-page .project-checkbox-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+
+.employee-work-reports-page .project-checkbox-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #98a2b3;
+}
+
+.employee-work-reports-page .project-checkbox.selected .project-checkbox-status::before {
+  background: #a47718;
+}
+
+.employee-work-reports-page .project-selection-message {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px dashed #d7dce3;
+  border-radius: 10px;
+  background: #fafbfc;
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+.employee-work-reports-page .project-checkbox > input[type="checkbox"] + span {
+  min-width: 0;
+  flex: 1;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.employee-work-reports-page .primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 156px;
+  min-height: 44px;
+  margin-top: 22px;
+  padding: 0 18px;
+  border: 1px solid #172033;
+  border-radius: 9px;
+  background: #172033;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.employee-work-reports-page .primary-button:hover {
+  background: #25304a;
+  box-shadow: 0 5px 14px rgba(23, 32, 51, 0.16);
+  transform: translateY(-1px);
+}
+
+.employee-work-reports-page .primary-button:active {
+  transform: translateY(0);
+}
+
+.employee-work-reports-page .leave-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employee-work-reports-page .work-reports-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.employee-work-reports-page .work-reports-table th {
+  padding: 13px 15px;
+  border-bottom: 1px solid #e7eaf0;
+  background: #f9fafb;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.employee-work-reports-page .work-reports-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eef0f3;
+  color: #475467;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.employee-work-reports-page .work-reports-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+.employee-work-reports-page .work-reports-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.employee-work-reports-page .status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 9px;
+  border: 1px solid #e1e5eb;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.employee-work-reports-page .status-badge.submitted {
+  border-color: #eee3c7;
+  background: #fffbf2;
+  color: #8a6b1f;
+}
+
+.employee-work-reports-page .status-badge.reviewed {
+  border-color: #dce3ee;
+  background: #f4f7fb;
+  color: #344054;
+}
+
+.employee-work-reports-page .leave-message,
+.employee-work-reports-page .success-message,
+.employee-work-reports-page .error-message {
+  margin-bottom: 18px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+.employee-work-reports-page .form-grid {
+    grid-template-columns: 1fr;
+  }.employee-work-reports-page .form-group.full-width,
+  .employee-work-reports-page .work-report-projects {
+    grid-column: auto;
+  }.employee-work-reports-page .project-checkbox-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+.employee-work-reports-page .leave-apply-panel form {
+    padding: 18px;
+  }.employee-work-reports-page .card-header {
+    padding: 18px;
+  }.employee-work-reports-page .project-checkbox {
+    min-height: 60px;
+  }.employee-work-reports-page .primary-button {
+    width: 100%;
+  }
+}
+
+.work-report-projects {
+  width: 100%;
+  margin-top: 4px !important;
+}
+
+.work-report-projects > label:first-child {
+  display: block !important;
+  margin: 0 0 9px !important;
+  color: #344054 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+.work-report-projects .project-checkbox-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.work-report-projects .project-checkbox {
+  display: flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 10px 13px !important;
+
+  border: 1px solid #e1e5eb !important;
+  border-radius: 9px !important;
+  background: #fafbfc !important;
+
+  cursor: pointer !important;
+  color: #344054 !important;
+  line-height: 1.2 !important;
+
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease !important;
+}
+
+.work-report-projects .project-checkbox:hover {
+  border-color: #c5ccd6 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.05) !important;
+}
+
+.work-report-projects .project-checkbox.selected {
+  border-color: #172033 !important;
+  background: #f5f7fa !important;
+  box-shadow: 0 0 0 1px rgba(23, 32, 51, 0.04) !important;
+}
+
+.work-report-projects .project-checkbox input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  display: block !important;
+  width: 17px !important;
+  min-width: 17px !important;
+  max-width: 17px !important;
+
+  height: 17px !important;
+  min-height: 17px !important;
+  max-height: 17px !important;
+
+  flex: 0 0 17px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 1.5px solid #b7bec9 !important;
+  border-radius: 4px !important;
+  background: #ffffff !important;
+
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+
+.work-report-projects .project-checkbox input[type="checkbox"]:checked {
+  border-color: #172033 !important;
+  background: #172033 !important;
+}
+
+.work-report-projects .project-checkbox input[type="checkbox"]:checked::after {
+  content: "" !important;
+  display: block !important;
+  width: 4px !important;
+  height: 8px !important;
+  margin: 2px 0 0 5px !important;
+
+  border: solid #ffffff !important;
+  border-width: 0 1.5px 1.5px 0 !important;
+
+  transform: rotate(45deg) !important;
+}
+
+.work-report-projects .project-checkbox-content {
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+.work-report-projects .project-checkbox-name {
+  display: block !important;
+  overflow: hidden !important;
+
+  margin: 0 !important;
+  color: #172033 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.work-report-projects .project-checkbox-status {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+
+  margin: 3px 0 0 !important;
+  color: #98a2b3 !important;
+  font-size: 9px !important;
+  font-weight: 650 !important;
+  line-height: 1 !important;
+  text-transform: capitalize !important;
+}
+
+.work-report-projects .project-checkbox-status::before {
+  content: "" !important;
+  width: 5px !important;
+  height: 5px !important;
+  flex: 0 0 5px !important;
+  border-radius: 50% !important;
+  background: #98a2b3 !important;
+}
+
+.work-report-projects .project-checkbox.selected
+.project-checkbox-status::before {
+  background: #a47718 !important;
+}
+
+.work-report-projects .project-checkbox
+input[type="checkbox"] + span {
+  min-width: 0 !important;
+  flex: 1 !important;
+  margin: 0 !important;
+  color: #172033 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.work-report-projects .project-selection-message {
+  display: flex !important;
+  align-items: center !important;
+
+  min-height: 50px !important;
+  box-sizing: border-box !important;
+  padding: 10px 13px !important;
+
+  border: 1px dashed #d7dce3 !important;
+  border-radius: 9px !important;
+  background: #fafbfc !important;
+
+  color: #98a2b3 !important;
+  font-size: 11px !important;
+}
+
+.work-report-projects + .form-group {
+  margin-top: 20px !important;
+}
+
+@media (max-width: 800px) {
+.work-report-projects .project-checkbox-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+.work-report-projects .project-checkbox {
+    min-height: 52px !important;
+  }
+}
+
+/* =========================================================
+   EMPLOYEE WORK REPORTS - FINAL SPACING FIX
+   ========================================================= */
+
+.employee-work-reports-page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Main report card */
+.employee-work-reports-page .leave-apply-panel,
+.employee-work-reports-page .work-report-card {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.04);
+}
+
+/* Header inside report card */
+.employee-work-reports-page .card-header {
+  padding: 24px 28px 20px !important;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eaecf0;
+}
+
+/* IMPORTANT: form padding */
+.employee-work-reports-page .work-report-form,
+.employee-work-reports-page .leave-apply-panel form {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 32px 34px !important;
+}
+
+/* Form layout */
+.employee-work-reports-page .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 24px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual fields */
+.employee-work-reports-page .form-group {
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Labels */
+.employee-work-reports-page .form-group label,
+.employee-work-reports-page .work-report-form > label {
+  display: block;
+  margin: 0 0 9px !important;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Inputs */
+.employee-work-reports-page .form-group input:not([type="checkbox"]),
+.employee-work-reports-page .form-group select,
+.employee-work-reports-page .work-report-form input:not([type="checkbox"]),
+.employee-work-reports-page .work-report-form select {
+  width: 100%;
+  min-height: 46px;
+  height: 46px;
+  box-sizing: border-box;
+  padding: 0 14px !important;
+
+  border: 1px solid #d9e0ea;
+  border-radius: 9px;
+  background: #ffffff;
+
+  color: #172033;
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+}
+
+/* Textarea */
+.employee-work-reports-page .form-group textarea,
+.employee-work-reports-page .work-report-form textarea {
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+  padding: 13px 14px !important;
+
+  border: 1px solid #d9e0ea;
+  border-radius: 9px;
+  background: #ffffff;
+
+  color: #172033;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+
+  resize: vertical;
+  outline: none;
+}
+
+/* Focus */
+.employee-work-reports-page .form-group input:not([type="checkbox"]):focus,
+.employee-work-reports-page .form-group select:focus,
+.employee-work-reports-page .form-group textarea:focus {
+  border-color: #7b8798;
+  box-shadow: 0 0 0 3px rgba(23, 32, 51, 0.06);
+}
+
+/* Projects section */
+.employee-work-reports-page .work-report-projects {
+  grid-column: 1 / -1 !important;
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* Projects label */
+.employee-work-reports-page .work-report-projects > label:first-child {
+  display: block;
+  margin: 0 0 10px !important;
+}
+
+/* Project cards */
+.employee-work-reports-page .work-report-projects .project-checkbox-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100%;
+  margin: 0;
+}
+
+/* Individual project */
+.employee-work-reports-page .work-report-projects .project-checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 62px;
+  box-sizing: border-box;
+
+  margin: 0 !important;
+  padding: 13px 15px !important;
+
+  border: 1px solid #e1e5eb;
+  border-radius: 10px;
+  background: #fafbfc;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.employee-work-reports-page .work-report-projects .project-checkbox:hover {
+  background: #ffffff;
+  border-color: #c5ccd6;
+  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.06);
+}
+
+/* Checkbox */
+.employee-work-reports-page
+.work-report-projects
+.project-checkbox
+input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  flex: 0 0 18px;
+
+  accent-color: #172033;
+}
+
+/* Project text */
+.employee-work-reports-page
+.work-report-projects
+.project-checkbox-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.employee-work-reports-page
+.work-report-projects
+.project-checkbox-name {
+  display: block;
+  margin: 0;
+
+  color: #172033;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Submit button */
+.employee-work-reports-page .primary-button,
+.employee-work-reports-page .submit-report-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+  min-height: 46px;
+
+  margin-top: 8px !important;
+  padding: 0 20px !important;
+
+  border: 1px solid #172033;
+  border-radius: 9px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.employee-work-reports-page .primary-button:hover,
+.employee-work-reports-page .submit-report-btn:hover {
+  background: #25304a;
+  box-shadow: 0 5px 14px rgba(23, 32, 51, 0.16);
+  transform: translateY(-1px);
+}
+
+/* Error/success messages */
+.employee-work-reports-page .error-message,
+.employee-work-reports-page .success-message,
+.employee-work-reports-page .leave-message {
+  margin: 0 0 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .employee-work-reports-page .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-work-reports-page .work-report-projects {
+    grid-column: 1 !important;
+  }
+
+  .employee-work-reports-page .work-report-projects .project-checkbox-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .employee-work-reports-page .work-report-form,
+  .employee-work-reports-page .leave-apply-panel form {
+    padding: 22px 18px 26px !important;
+  }
+
+  .employee-work-reports-page .card-header {
+    padding: 20px 18px !important;
+  }
+
+  .employee-work-reports-page .primary-button,
+  .employee-work-reports-page .submit-report-btn {
+    width: 100%;
+  }
+}
+/* =========================================================
+   EMPLOYEE WORK REPORTS - FINAL FIX
+   ========================================================= */
+
+.employee-work-reports-page {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Main report card */
+.employee-work-reports-page .leave-apply-panel,
+.employee-work-reports-page .work-report-card {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  border: 1px solid #e4e7ec !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.04) !important;
+}
+
+/* Header */
+.employee-work-reports-page .card-header {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 24px 28px 20px !important;
+  border-bottom: 1px solid #eaecf0 !important;
+}
+
+/* FORM - THIS IS THE IMPORTANT PART */
+.employee-work-reports-page .leave-apply-panel form,
+.employee-work-reports-page .work-report-form {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 30px 32px 34px !important;
+}
+
+/* Form fields */
+.employee-work-reports-page .form-group {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 22px !important;
+}
+
+/* Labels */
+.employee-work-reports-page .form-group label {
+  display: block !important;
+  margin: 0 0 9px !important;
+  color: #344054 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+
+/* Inputs */
+.employee-work-reports-page .form-group input:not([type="checkbox"]),
+.employee-work-reports-page .form-group select,
+.employee-work-reports-page .form-group textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  border: 1px solid #d9e0ea !important;
+  border-radius: 9px !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  outline: none !important;
+}
+
+.employee-work-reports-page .form-group input:not([type="checkbox"]),
+.employee-work-reports-page .form-group select {
+  height: 46px !important;
+  min-height: 46px !important;
+  padding: 0 14px !important;
+}
+
+.employee-work-reports-page .form-group textarea {
+  min-height: 120px !important;
+  padding: 13px 14px !important;
+  resize: vertical !important;
+}
+
+/* Projects section */
+.employee-work-reports-page .work-report-projects {
+  width: 100% !important;
+  margin: 0 0 22px !important;
+}
+
+/* Projects label */
+.employee-work-reports-page .work-report-projects > label:first-child {
+  display: block !important;
+  margin: 0 0 10px !important;
+}
+
+/* Project cards */
+.employee-work-reports-page .project-checkbox-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Individual project */
+.employee-work-reports-page .project-checkbox {
+  display: flex !important;
+  align-items: center !important;
+  gap: 13px !important;
+  width: 100% !important;
+  min-height: 66px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 14px 16px !important;
+
+  border: 1px solid #e0e4ea !important;
+  border-radius: 11px !important;
+  background: #fbfcfd !important;
+
+  cursor: pointer !important;
+  transition: all 0.18s ease !important;
+}
+
+.employee-work-reports-page .project-checkbox:hover {
+  background: #ffffff !important;
+  border-color: #c6ccd5 !important;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.06) !important;
+}
+
+/* Checkbox */
+.employee-work-reports-page
+.project-checkbox
+input[type="checkbox"] {
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 0 0 19px !important;
+  accent-color: #172033 !important;
+}
+
+/* Project name */
+.employee-work-reports-page .project-checkbox-name {
+  display: block !important;
+  margin: 0 !important;
+  color: #172033 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+
+/* Submit button */
+.employee-work-reports-page .primary-button,
+.employee-work-reports-page .submit-report-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-width: 156px !important;
+  min-height: 46px !important;
+
+  margin-top: 8px !important;
+  padding: 0 20px !important;
+
+  border: 1px solid #172033 !important;
+  border-radius: 9px !important;
+
+  background: #172033 !important;
+  color: #ffffff !important;
+
+  font-size: 13px !important;
+  font-weight: 700 !important;
+
+  cursor: pointer !important;
+}
+
+.employee-work-reports-page .primary-button:hover,
+.employee-work-reports-page .submit-report-btn:hover {
+  background: #25304a !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .employee-work-reports-page .project-checkbox-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .employee-work-reports-page .leave-apply-panel form,
+  .employee-work-reports-page .work-report-form {
+    padding: 24px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .employee-work-reports-page .leave-apply-panel form,
+  .employee-work-reports-page .work-report-form {
+    padding: 20px 16px 24px !important;
+  }
+
+  .employee-work-reports-page .primary-button,
+  .employee-work-reports-page .submit-report-btn {
+    width: 100% !important;
+  }
+}
