@@ -1,0 +1,49 @@
+services:
+
+  db:
+    image: postgres:16
+    container_name: hrm-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "0000"
+      POSTGRES_DB: hrm_database
+    volumes:
+      - hrm_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d hrm_database"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: hrm-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: "postgresql+psycopg://postgres:0000@db:5432/hrm_database"
+    ports:
+      - "8001:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: hrm-frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: "http://localhost:8001"
+    ports:
+      - "5174:5173"
+    depends_on:
+      - backend
+
+volumes:
+  hrm_postgres_data:
