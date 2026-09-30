@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ConfirmModal from "../components/ConfirmModal";
 import FeedbackModal from "../components/FeedbackModal";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const readResponse = async (response) => {
   const text = await response.text();

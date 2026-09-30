@@ -1,7 +1,7 @@
 import "../css/HRNotifications.css";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = import.meta.env.VITE_API_URL;
 const HOLIDAY_API = "https://date.nager.at/api/v3/PublicHolidays";
 
 const FALLBACK_EVENTS = [

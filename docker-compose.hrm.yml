@@ -1,49 +1,87 @@
 services:
 
+  # =========================
+  # PostgreSQL Database
+  # =========================
   db:
-    image: postgres:16
+    image: postgres:18
     container_name: hrm-postgres
-    restart: unless-stopped
+
     environment:
+      POSTGRES_DB: hrm_database
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: "0000"
-      POSTGRES_DB: hrm_database
+
+    ports:
+      - "5433:5432"
+
     volumes:
-      - hrm_postgres_data:/var/lib/postgresql/data
+      - hrm_postgres_data:/var/lib/postgresql
+
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d hrm_database"]
       interval: 5s
       timeout: 5s
       retries: 10
 
+    restart: unless-stopped
+
+
+  # =========================
+  # FastAPI Backend
+  # =========================
   backend:
     build:
       context: .
       dockerfile: backend/Dockerfile
+
     container_name: hrm-backend
-    restart: unless-stopped
-    env_file:
-      - ./backend/.env
+
     environment:
-      DATABASE_URL: "postgresql+psycopg://postgres:0000@db:5432/hrm_database"
+      DATABASE_URL: postgresql+psycopg://postgres:0000@db:5432/hrm_database
+
+      JWT_SECRET_KEY: YHi29cVSIeHRGdosd4CyVcKwinAm1e7L1LlGYOlAbAY
+      JWT_ALGORITHM: HS256
+      JWT_ACCESS_TOKEN_EXPIRE_MINUTES: "60"
+
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: "587"
+      SMTP_USERNAME: mediatizehr9@gmail.com
+      SMTP_PASSWORD: flwcuzdmptpxeatz
+
     ports:
       - "8001:8000"
+
     depends_on:
       db:
         condition: service_healthy
 
+    restart: unless-stopped
+
+
+  # =========================
+  # React / Vite Frontend
+  # =========================
   frontend:
     build:
       context: .
       dockerfile: frontend/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8001
+
     container_name: hrm-frontend
-    restart: unless-stopped
-    environment:
-      VITE_API_URL: "http://localhost:8001"
+
     ports:
       - "5174:5173"
+
     depends_on:
       - backend
 
+    restart: unless-stopped
+
+
+# =========================
+# Volumes
+# =========================
 volumes:
   hrm_postgres_data:
